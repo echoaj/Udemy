@@ -1,0 +1,63 @@
+.Die{
+    border-radius: 25px;
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    display: grid;
+    align-content: center;
+}
+
+.Die div{
+    background-size: contain;
+    height: inherit;
+    width: inherit;
+}
+
+.Die-1{
+    background-image: url("https://cdn2.iconfinder.com/data/icons/dice-roll/100/dice_black_1-512.png");
+}
+
+.Die-2{
+    background-image: url("https://cdn2.iconfinder.com/data/icons/dice-roll/100/dice_black_2-512.png");
+}
+
+.Die-3{
+    background-image: url("https://cdn2.iconfinder.com/data/icons/dice-roll/100/dice_black_3-512.png");
+}
+
+.Die-4{
+    background-image: url("https://cdn2.iconfinder.com/data/icons/dice-roll/100/dice_black_4-512.png");
+}
+
+.Die-5{
+    background-image: url("https://cdn2.iconfinder.com/data/icons/dice-roll/100/dice_black_5-512.png");
+}
+
+.Die-6{
+    background-image: url("https://cdn2.iconfinder.com/data/icons/dice-roll/100/dice_black_6-512.png");
+}
+
+.Die-isShaking {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-4px, 0, 0) rotate3d(0,0,1, -5deg);
+    }
+
+    20%, 80% {
+        transform: translate3d(4px, 0, 0) rotate3d(0,0,1, 3deg);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-8px, 0, 0) rotate3d(0,0,1, -3deg);
+    }
+
+    40%, 60% {
+        transform: translate3d(8px, 0, 0) rotate3d(0,0,1, 2deg);
+    }
+}

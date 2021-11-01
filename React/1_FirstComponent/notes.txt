@@ -1,0 +1,8 @@
+This is the way you can create a react app without using "create react cli tool"
+The old fasion way is to include the scripts in the html file
+
+Different ways to writting components
+1) function components  -- hooks make them more powerful
+2) class components
+
+React apps must be hosted on a server 

@@ -1,0 +1,20 @@
+.Pokedex-root{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.Pokedex-win{
+    color: rgb(0, 210, 0);
+    margin-bottom: 5px;
+}
+
+.Pokedex-loose{
+    color: rgb(255, 0, 0);
+    margin-bottom: 5px;
+}
+
+.Pokedex-total-exp{
+    margin: 0px;
+    font-family: sans-serif;
+}

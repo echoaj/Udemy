@@ -1,0 +1,27 @@
+.Flipper{
+    text-align: center;
+    width: 300px;
+    border: solid 1px black;
+    background-color: rgb(216, 164, 139);
+}
+
+.Flipper button{
+    width: 80px;
+    height: 30px;
+    border: solid gray 1px;
+    border-radius: 20px;
+    font-style: italic;
+    font-family: sans-serif;
+    margin-top: 1.5rem;
+}
+
+.Flipper button:hover{
+    cursor: pointer;
+}
+.Flipper button:active{
+    background-color: rgb(220, 220, 220);
+}
+
+.Flipper p{
+    margin-bottom: 1.5rem;
+}

@@ -1,0 +1,10 @@
+.Coin{
+    background-color: rgb(240, 240, 240);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.Coin-img{
+    width: 150px;
+    height: 150px;
+}

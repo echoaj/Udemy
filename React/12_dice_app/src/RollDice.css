@@ -1,0 +1,33 @@
+.RollDice{
+    text-align: center;
+    width: 400px;
+    margin: auto;
+}
+
+.RollDice-die{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 200px;
+  }
+
+.RollDice-button-div{
+    grid-column: 1 / span 2;
+}
+  
+.RollDice-button{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    width: 12.2em;
+    height: 2.9em;
+    background-color: indigo;
+    color: white;
+    border: none;
+    border-radius: 15px;
+}
+
+.RollDice-button:hover{
+    background-color: rgb(120, 20, 192);
+    width: 12.4em;
+    height: 3em;
+    cursor: pointer;
+}

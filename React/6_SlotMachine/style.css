@@ -1,0 +1,17 @@
+
+/* It's standart to have a class the same name of you component */
+.Machine{
+    background-color: lightblue;
+    border: 2px solid black;
+    text-align: center;
+    width: 300px;
+}
+
+.Machine-Winner{
+    color:green;
+    font-size: 30px;
+}
+
+.Machine-Looser{
+    color:red;
+}

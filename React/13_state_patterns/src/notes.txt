@@ -1,0 +1,28 @@
+In React, you want to try to put as little data in state as possible
+Litmust text: os x change?  If not don't make it part of the state.  Maybe it should be a prop
+Limust test:  is x already captured by some other value Y in state or props?  Derive it from there instead.
+
+Bad Example of state design:
+    this.state{
+        fname: "matt",
+        lname: "Johnson",
+        bday:  "July 19",
+        age: 25,
+        mage: 'irate',
+    }
+
+fixed Example of state design:
+    console.log(this.props);
+    {
+        fname: "matt",
+        lname: "Johnson",
+        bday:  "July 19",
+        age: 25,
+    }
+
+    console.log(this.state){
+        mood: 'insane'
+    }
+
+Where should state live?
+In parent, we want to support "downward data flow".  Also makes it easier to debug.

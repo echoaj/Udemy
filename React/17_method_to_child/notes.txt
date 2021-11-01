@@ -1,0 +1,31 @@
+
+When your event handlers reference the keword "this", watch out!
+You will lose the this context when you pass a function as a handler
+
+4rth way to bind functions
+experimental*
+myFunctions = () = {
+
+}
+
+Binding with arguments
+1 way
+onClick={this.changeColor.bind(this, arg1, arg2, arg3,...)}
+2 way
+() => this.changeColor(arg1, arg2, arg3,...)
+3 way
+restructure code to pass function down from parent to child and won't have to bind.
+    * A parent component defines a function
+    * The function is passed as a prop to a child component
+    * The child component invokes the prop
+    * The parent function is called, usually setting a new state.
+
+Suggested rules
+    * bind in hire components
+    * If you need a parameter pass it down to child as a prop, then bind in parent and child
+    * No need to bind in the constructor and make an inline function
+
+Naming Conventions
+    * For consistency follow action/handleAction
+    * In parent give function name an action such as (remove, add, open, toggle ... ect)
+    * In child use name along with handle in front such as (handleRemove, handleAdd, handleOpen, handleToggel ... ect)

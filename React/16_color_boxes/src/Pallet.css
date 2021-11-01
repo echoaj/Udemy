@@ -1,0 +1,9 @@
+.Pallet{
+    width: 1200px;
+    padding: 1px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    grid-gap: 1px;
+    margin: auto;
+}
