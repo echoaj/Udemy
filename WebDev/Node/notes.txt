@@ -1,0 +1,23 @@
+A common pattern in Node when requiring folders is to have an index.html in the folder
+you are requiring.  And inside index.html, require all other files, put them in an array
+and export them all. 
+
+package.json is a file that is included in every node module that contain things like
+dependencies, authors, bugs, description, and more.  It technically is not required
+bit it should always be there.  npm init to make package.js that conforms to template/standard
+you should follow.  Now that we have a package.json we won't get a warning when installing Node modules.
+Now package.json contains new node and version you installed.  Nothing in package.json will affect your code.
+
+Don't include Node modules when uploading code to GitHub.
+In .gitignore type: node_modules/*
+
+Run npm install or npm i to install all dependencies in package.json.
+Run npm init to create package.json
+Run npm init -y to skip questions when creating package.json
+
+-------- Install A Package With NPM ---------
+nmp install give-me-a-joke
+nmp i give-me-a-joke
+
+-------- Install A Package GLOBALY With NPM ---------
+npm i -g cowsay

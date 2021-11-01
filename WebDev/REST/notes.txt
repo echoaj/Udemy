@@ -1,0 +1,42 @@
+REST (Representational State Transfer)
+It is an "architectual style ofr distributed hypermedia systems"
+
+It's basically a set of guidelines/ideas/principles for how a client + server
+should communicate and peform CRUD operations on a given resource.
+
+RESTFULL just means it complies with these rules of REST.
+A resource is just an entity, it could be a tweet, an image, a car in DB anything really.
+
+HTTP is a stateless protocol. Every request is on its own in a vaccume.  It doesn't 
+access to previous requests.
+
+RESTFULL systems have a Uniform Interface which means it has some kind of URL patterns
+that expose full CRUD operations over HTTP.
+
+Lot of way to structure routes but we will follow RESTFULL pattern.
+Sometimes a resource is called an endpoint. Kinda like a link GET/gists/{gist_id}
+PATCH/gists/{gist_id} can be used to update.  DELETE/gists/{gist_id} can be used to
+delete.  And all have the same endpoint.
+
+// RESTFULL SERVER ARCHITECTURE
+
+// Here is one way of implementing RESTFULL APIs
+
+// GET /comments - list all comments                    
+// POST /comments - Create a new comment
+// GET /comments/:id - Get one comment (user ID)
+// PACH /comments/:id - Destroy one comment
+// DELETE /comments/:id - Destory one comment
+
+// To match HTTP Verbs with a base url that is often pluralized
+// Then adding an id or unique identifier when appropriate
+
+Many ways to structure application so that it is considered restfull.
+
+CRUD -> Create Update Delete
+
+// PUT request basically replaces the whole thing
+// PATCH request modifies a portion of it
+
+Can't send anything from HTML besides GET and POST requests.
+But we can fake it by method overriding

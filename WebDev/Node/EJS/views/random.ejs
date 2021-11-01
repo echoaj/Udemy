@@ -1,0 +1,14 @@
+<%- include("partials/head") %>
+    <%- include("partials/navbar") %>
+    <!-- EJS Docs: https://ejs.co/#docs -->
+    <!-- We want to have as minimal logic as possible -->
+    <h1>Rand Num 1: <%= Math.floor(Math.random() * 10) + 1 %></h1>
+    <!-- It is better to have the logic in JS and pass it in. -->
+    <h1>Rand Num 2: <%= randNum %></h1>
+
+    <% if(randNum % 2 === 0) {%>
+        <h2><%= randNum %> Is Even</h2>
+    <% }else{ %>
+        <h2><%= randNum %> Is Odd</h2>
+    <% } %>
+<%- include("partials/footer") %>
