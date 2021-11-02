@@ -1,0 +1,13 @@
+extends layouts/login-layout.pug
+//- when it's .className pug assumes its div.className
+block content    
+    .loginContainer
+        h1 Login
+        form(method="post")
+            //- The # mean ID.. Right now it has no ID
+            //- name will be used to access username
+            input(type="text", name="logUsername", placeholder="Username or email", required="")
+            input(type="password", name="logUsername", placeholder="Password", required="")
+            input(type="submit", value="Login")
+        a(href="/register") Need an account? Register here.
+    

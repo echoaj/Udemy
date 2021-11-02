@@ -1,0 +1,5 @@
+Resource:
+Pug to HTML
+https://pughtml.com/
+
+Since pug is client side code, you don't need to restart the server.
