@@ -11,7 +11,7 @@ app.set("views", path.join(__dirname, "views"));
 
 // when root is accessed, first check if loggedin then do next step
 router.get("/", (req, res, next) => {
-    res.status(200).render("login", { pageTitle: "Login" });
+    res.status(200).render("register", { pageTitle: "Register" });
 });
 
 module.exports = router;

@@ -14,8 +14,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // ROUTES
 const loginRoute = require('./routes/loginRoutes');
+const registerRoute = require('./routes/registerRoutes');
 app.use("/login", loginRoute);
-
+app.use("/register", registerRoute);
 
 // when root is accessed, first check if loggedin then do next step
 app.get("/", middleware.requireLogin, (req, res, next) => {
