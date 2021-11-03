@@ -3,6 +3,7 @@ const app = express();
 const port = 3003;
 const path = require('path');
 const middleware = require('./middleware');
+const bodyParser = require('body-parser');
 
 const server = app.listen(port, () => console.log("Server listening on port " + port));
 
@@ -11,6 +12,8 @@ app.set("views", path.join(__dirname, "views"));
 
 // SERVING STATIC FILES LIKE CSS
 app.use(express.static(path.join(__dirname, "public")));
+app.use(bodyParser.urlencoded({extended: false}));
+
 
 // ROUTES
 const loginRoute = require('./routes/loginRoutes');

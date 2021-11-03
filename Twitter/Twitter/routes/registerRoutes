@@ -2,9 +2,12 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const router = express.Router();
+const bodyParser = require('body-parser');
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // This file here is not handling traffic to the server it is just
 // handeling routes.
@@ -12,6 +15,26 @@ app.set("views", path.join(__dirname, "views"));
 // when root is accessed, first check if loggedin then do next step
 router.get("/", (req, res, next) => {
     res.status(200).render("register", { pageTitle: "Register" });
+});
+
+// when posting register fome it runs below
+router.post("/", (req, res, next) => {
+    // Getting form data
+    console.log(req.body);
+    let firstName = req.body.firstName.trim();
+    let lastName = req.body.lastName.trim();
+    let username = req.body.userName.trim();
+    let email = req.body.email.trim();
+    let password = req.body.password;
+    let payload = req.body;
+
+    if (firstName && lastName && username && email && password) {
+
+    } else {
+        payload.errorMessage = "Each field must have a valid value";
+        res.status(200).render("register", payload);
+    }
+
 });
 
 module.exports = router;

@@ -1,17 +1,32 @@
 extends layouts/login-layout.pug
 //- when it's .className pug assumes its div.className
-block content    
+block content
     .loginContainer
         h1 Register
-        form(method="post")
+        // onsubmit will prevent default submission and called our JS function instead
+        form#registerForm(method="post", onsubmit="event.preventDefault(); validateForm()")
 
-            input(type="text", name="firstName", placeholder="first name", required="")
-            input(type="text", name="lastName", placeholder="last name", required="")
-            input(type="text", name="userName", placeholder="username", required="")
-            input(type="email", name="email", placeholder="email", required="")
-            input(type="password", name="password", placeholder="password", required="")
-            input(type="password", name="passwordConf", placeholder="confirm password", required="")
+            p.errorMessage #{errorMessage}
+
+            input(type="text", name="firstName", placeholder="first name", value:firstName required="")
+            input(type="text", name="lastName", placeholder="last name", value:lastName required="")
+            input(type="text", name="userName", placeholder="username", value:username required="")
+            input(type="email", name="email", placeholder="email", value:email required="")
+            input#pass(type="password", name="password", placeholder="password", required="")
+            input#passConf(type="password", name="passwordConf", placeholder="confirm password", required="")
             input(type="submit", value="Login")
             
         a(href="/login") Already have account? Log in here.
-    
+
+    script.
+        const passwordField = document.getElementById("pass");
+        const passwordConfirmField = document.getElementById("passConf");
+        const form = document.getElementById("registerForm");
+
+        function validateForm() {
+            if(passwordField.value != passwordConfirmField.value){
+                alert("Password don't match. Try again.")
+            }else{
+                form.submit();
+            }
+        }
