@@ -1,4 +1,7 @@
-MongoDB Installation guide:
+MongoDB CRUD Operations Guide:
+https://docs.mongodb.com/manual/crud/
+
+MongoDB Installation Guide:
 Windows: https://zarkom.net/blogs/how-to-install-mongodb-for-development-in-windows-3328
 Windows: https://www.youtube.com/watch?v=FwMwO8pXfq0&t=176s Worked for me
 Mac: https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/22086120#overview
@@ -33,3 +36,20 @@ If error cccures do the following:
 10) Execute > mongodb
 11) Execute > brew services stop mongodb/brew/mongodb-community    // stops service 
          or > brew services stop mongodb-community@5.0
+
+The Mongo shell is based on JavaScript
+
+Clear Screen -> Ctrl + l
+
+To delete everyhitn in collection
+Execute > db.<collection_name>.deleteMany({})
+
+Connect to mongoose reference:
+https://mongoosejs.com/
+
+Query Examples:
+ Movie.find({year: {$gte: '2005'}}).then(data => console.log(data)) // find all movies whose year is greater than or equal to 2005
+ // Note: Movie.find({year: {$gte: '2005'}}) is not a promise, it uses a thenable object.  If you want it to return a promise use .exit()
+ // Note: Movie.updateOne({title: 'Transformers'}, {year: 2003}).then(res => console.log(res))  Update record titled transformers to have a year of 2003
+ Movie.remove({title: 'Transformers'}).then(msg => console.log(msg)) // Delete Transformers Movie
+ Movie.findOneAndDelete({title: 'Frozen'}).then(msg => console.log(msg)) // Delete first Frozen movie found in db
