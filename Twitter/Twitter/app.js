@@ -25,8 +25,11 @@ app.use(session({
 // ROUTES
 const loginRoute = require('./routes/loginRoutes');
 const registerRoute = require('./routes/registerRoutes');
+const logoutRoute = require('./routes/logoutRoutes');
+
 app.use("/login", loginRoute);
 app.use("/register", registerRoute);
+app.use("/logout", logoutRoute);
 
 // when root is accessed, first check if loggedin then do next step
 app.get("/", middleware.requireLogin, (req, res, next) => {

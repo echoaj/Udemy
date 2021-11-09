@@ -1,0 +1,64 @@
+:root{
+    --twitterBlue: #1FA2F1;
+    --lightGray: rgb(210, 216, 210);
+    --spacing: 15px;
+}
+
+a{
+    color: inherit;
+}
+
+h1{
+    font-size: 19px;
+    font-weight: 800;
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+}
+
+nav a{
+    display: flex;
+    padding: 10px;
+    font-size: 30px;
+    width: 55px;
+    height: 55px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: var(--twitterBlue);
+    background-color: rgb(227, 244, 255);
+    border-radius: 50%;
+}
+
+nav a.blue{
+    color: var(--twitterBlue);
+}
+
+.mainSectionContainer{
+    padding: 0px;
+    border-left: 1px solid var(--lightGray);
+    border-right: 1px solid var(--lightGray);
+    display: flex;
+    flex-direction: column;
+}
+
+.titleContainer{
+    height: 53px;
+    padding: 0 var(--spacing);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--lightGray);
+    flex-shrink: 0;     /* fixes a bug in safari */
+}
+
+.titleContainer h1{
+    flex: 1;
+}
