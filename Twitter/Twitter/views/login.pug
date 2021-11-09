@@ -4,10 +4,12 @@ block content
     .loginContainer
         h1 Login
         form(method="post")
+            p.errorMessage #{errorMessage}
             //- The # mean ID.. Right now it has no ID
             //- name will be used to access username
-            input(type="text", name="logUsername", placeholder="Username or email", required="")
-            input(type="password", name="logUsername", placeholder="Password", required="")
+            //- value= means is value is set it wil put string back in textbox for them
+            input(type="text", name="logUsername", placeholder="Username or email", value=logUsername required="")
+            input(type="password", name="logPassword", placeholder="Password", required="")
             input(type="submit", value="Login")
         a(href="/register") Need an account? Register here.
     

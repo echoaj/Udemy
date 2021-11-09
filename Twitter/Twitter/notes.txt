@@ -14,3 +14,10 @@ client.connect(err => {
   // perform actions on the collection object
   client.close();
 });
+
+One way of querying data without async await
+User.findOne( { $or : [{ username: username_ }, { email: email_}] })
+        .then( (user) => {
+            // prints out result of what is entered in the database
+            console.log(user);
+        });

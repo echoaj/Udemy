@@ -3,6 +3,8 @@ const app = express();
 const path = require('path');
 const router = express.Router();
 const bodyParser = require('body-parser');
+const User = require("../schemas/UserSchema");
+const bcrypt = require('bcrypt');
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
@@ -18,17 +20,56 @@ router.get("/", (req, res, next) => {
 });
 
 // when posting register fome it runs below
-router.post("/", (req, res, next) => {
+router.post("/", async (req, res, next) => {
     // Getting form data
-    console.log(req.body);
+    // console.log(req.body);
     let firstName = req.body.firstName.trim();
     let lastName = req.body.lastName.trim();
-    let username = req.body.userName.trim();
-    let email = req.body.email.trim();
+    let username_ = req.body.username.trim();
+    let email_ = req.body.email.trim();
     let password = req.body.password;
     let payload = req.body;
 
-    if (firstName && lastName && username && email && password) {
+    // if user enters all details
+    if (firstName && lastName && username_ && email_ && password) {
+        // find one will search 1 document.  document in mongo is same as row or record.
+        // will check if username or email is in there.
+        try {
+            var user = await User.findOne({ $or: [{ username: username_ }, { email: email_ }] });
+            console.log(user);
+            console.log("Query Successful");
+        } catch (err) {
+            console.log(err);
+            payload.errorMessage = "Query Failed. Something went wrong.";
+            res.status(200).render("register", payload);
+        }
+
+        if (user == null) {
+            // No user found
+            // So insert user
+            console.log("Inserting user.");
+            payload.password = await bcrypt.hash(password, 10);
+            User.create(payload)
+                .then((user) => {
+                    req.session.user = user; // may be issue
+                    console.log("User created in DB.");
+                    return res.redirect("/");
+                }).catch((err) => {
+                    console.log(err);
+                    console.log("User could not be created.");
+                });
+        } else {
+            // User was found
+            console.log("User already exists.");
+            if (email_ == user.email) {
+                console.log("Email exists.");
+                payload.errorMessage = "Email already in use.";
+            } else if (username_ == user.username) {
+                console.log("Password exists.");
+                payload.errorMessage = "Username already in use.";
+            }
+            res.status(200).render("register", payload);
+        }
 
     } else {
         payload.errorMessage = "Each field must have a valid value";
