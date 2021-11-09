@@ -3,3 +3,14 @@ Pug to HTML
 https://pughtml.com/
 
 Since pug is client side code, you don't need to restart the server.
+
+
+One way of connecting to TwitterTestDB
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://admin:<password>@twitterclone.9lamd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
