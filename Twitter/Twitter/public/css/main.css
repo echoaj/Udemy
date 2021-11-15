@@ -3,6 +3,8 @@
     --twitterLightBlue: #9BD1F9;
     --lightGray: rgb(210, 216, 210);
     --spacing: 15px;
+    --greyText: rgb(101, 119, 134);
+    --greyButtonText: rgba(0,0,0,0.34);
 }
 
 * {
@@ -41,6 +43,12 @@ nav a:hover{
     color: var(--twitterBlue);
     background-color: rgb(227, 244, 255);
     border-radius: 50%;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: var(--greyButtonText);
 }
 
 nav a.blue{
@@ -108,4 +116,66 @@ nav a.blue{
 
 #submitPostButton:disabled{
     background-color: var(--twitterLightBlue);
+}
+
+
+.post {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing);
+    cursor: pointer;
+    border-bottom: 1px solid var(--lightGrey);
+    flex-shrink: 0;
+}
+
+.mainContentContainer {
+    flex: 1;
+    display: flex;
+}
+
+.postContentContainer {
+    padding-left: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.displayName{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.displayName:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+.username,
+.date {
+    color: var(--greyText)
+}
+
+.postFooter{
+    display: flex;
+    align-items: center;
+}
+
+.postFooter .postButtonContainer {
+    flex: 1;
+    display: flex;
+}
+
+.postFooter .postButtonContainer button{
+    padding: 2px 5px;
+}
+
+.header a,
+.header span{
+    padding-right: 5px;
+}
+
+.postButtonContainer button:hover{
+    background-color: #D4EDFF;
+    color: var(--twitterBlue);
+    border-radius: 50%;
 }
