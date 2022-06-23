@@ -10,7 +10,7 @@ class Coin extends Component {
         var side = this.props.side === "tails" ? this.tails : this.heads;
         var displayType = this.props.enable === null ? "none" : "block";
         return (
-            <div className="Coin" style={{ display: displayType }}>
+            <div className="Coin" data-testid="Coin" style={{ display: displayType }}>
                 <img className="Coin-img" src={side} alt="penny"></img>
             </div>
         );
