@@ -8,7 +8,7 @@ import BrokenClick from './BrokenClick';
 import ButtonScore from './ButtonScore';
 import './App.css';
 
-/*
+
 function App() {
   return (
     <div className="App">
@@ -28,7 +28,7 @@ function App() {
       </header>
     </div>
   );
-}*/
+}
 
 class App extends Component{
   render(){

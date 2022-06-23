@@ -5,7 +5,7 @@ import Flipper from './Flipper';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div data-testid="flipper" className="App">
         <Flipper />
       </div>
     );
