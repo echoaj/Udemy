@@ -29,7 +29,7 @@ class Flipper extends Component {
 
     render() {
         return (
-            <div className="Flipper">
+            <div data-testid="flipperdiv" className="Flipper">
                 <h1>Coin Flipper</h1>
                 <Coin side={this.state.side} enable={this.state.side} />
                 <button onClick={this.flipCoin}>Flip</button>
